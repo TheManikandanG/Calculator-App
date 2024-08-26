@@ -1,55 +1,62 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
-    background: linear-gradient(150deg,rgb(108, 255, 162),rgb(106, 192, 228));
+    background-color: #e3f9ff;
 }
-.box{
+.container{
     display: flex;
-    flex-direction: row;
-    justify-content:flex-start;
-    margin: 15px;
-}
-.Calculator{
-    background-color: black;
-    width: 300px;
-    margin: 3% 35% 5% 38%;
-    border-radius: 10px;
-    padding:20px;
-    display: flex;
-    flex-wrap: wrap;
-}
-h1{
-    color: #fff;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     padding: 10px;
 }
-p{
-    text-align: center;
-    font-size: 30px;
-    margin: 0% 0% 6px;
-    padding: 10px;
-    background-color: black;
-    color: gold;
+.calculator{
+    background-color: #3a4452;
+    min-height: 70vh;
+    min-width: 20vw;
+    padding: 25px 20px;
+    border-radius: 15px;
+}
+.calculator h1{
+    color: #e3f9ff;
     font-weight: bold;
-    font-family:Arial, Helvetica, sans-serif;
 }
-#display{
-    width:95%;
-    height: 40px;
-    font-size: 25px;
-    padding: 7px;
-    font-weight: bolder;
+.calculator input{
+    text-align: right;
+    height: 9vh;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: transparent;
+    color: #e3f9ff;
 }
-.btn{
-    font-size: 25px;
-    margin-top: 15px;
-    margin-right: 7px;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    border: 0;
+.calculator button{
+    color: #e3f9ff;
+    font-size: 2em;
+    padding: 10px;
+    height: 10vh;
+    margin: 1%;
+    border: 0px;
+    box-shadow: -10px -10px 15px rgb(255, 255, 255, 0.1),5px 5px 15px rgb(0, 0, 0, 0.2);
+    background: transparent;
 }
-.btn:active{
-    background-color:orange;
+.row button:active{
+    background-color: #e3f9ff;
+    color: #3a4452;
+}
+.row{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin: 10px 0px;
+}
+#ls{
+    grid-column: 3/5;
 }
