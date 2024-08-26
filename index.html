@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator App</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" href="./Calculator.ico">
-  </head>
-  <body>
-      <p>Manikandan Projects</p>
-      <div class="Calculator">
-        <h1>Calculator</h1>
-        <input type="text" id="display" />
-        <div class="buttons">
-          <button onclick="cleardisplay()" class="btn">C</button>
-          <div class="btn-wrap">
-            <button onclick="displayvalue(7)" class="btn">7</button>
-            <button onclick="displayvalue(8)" class="btn">8</button>
-            <button onclick="displayvalue(9)" class="btn">9</button>
-            <button onclick="displayvalue('/')" class="btn">/</button>
-          </div>
-          <div class="btn-wrap">
-            <button onclick="displayvalue(4)" class="btn">4</button>
-            <button onclick="displayvalue(5)" class="btn">5</button>
-            <button onclick="displayvalue(6)" class="btn">6</button>
-            <button onclick="displayvalue('*')" class="btn">*</button>
-          </div>
-          <div class="btn-wrap">
-            <button onclick="displayvalue(1)" class="btn">1</button>
-            <button onclick="displayvalue(2)" class="btn">2</button>
-            <button onclick="displayvalue(3)" class="btn">3</button>
-            <button onclick="displayvalue('-')" class="btn">-</button>
-          </div>
-          <div class="btn-wrap">
-            <button onclick="displayvalue('.')" class="btn">.</button>
-            <button onclick="displayvalue('0')" class="btn">0</button>
-            <button onclick="displayvalue('+')" class="btn">+</button>
-            <button onclick="calculate('=')" class="btn">=</button>
-          </div>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./Calculator.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <h1>Calculator</h1>
+            <input type="text" id="input">
+            <div class="row">
+                <button onclick="input.value=''">AC</button>
+                <button onclick="input.value=''">DE</button>
+                <button onclick="display('.')">.</button>
+                <button onclick="display('/')">/</button>
+            </div>
+            <div class="row">
+                <button onclick="display('7')">7</button>
+                <button onclick="display('8')">8</button>
+                <button onclick="display('9')">9</button>
+                <button onclick="display('*')">*</button>
+            </div>
+            <div class="row">
+                <button onclick="display('4')">4</button>
+                <button onclick="display('5')">5</button>
+                <button onclick="display('6')">6</button>
+                <button onclick="display('-')">-</button>
+            </div>
+            <div class="row">
+                <button onclick="display('1')">1</button>
+                <button onclick="display('2')">2</button>
+                <button onclick="display('3')">3</button>
+                <button onclick="display('+')">+</button>
+            </div>
+            <div class="row">
+                <button onclick="display('00')">00</button>
+                <button onclick="display('0')">0</button>
+                <button onclick="sum()" id="ls">=</button>
+            </div>
         </div>
-      </div>
-  </body>
-  <script src="./calculator_script.js"></script>
+    </div>
+</body>
+<script>
+    var input=document.getElementById('input')
+
+    function display(val){
+        input.value+=val
+    }
+    function sum(){
+        var sum=eval(input.value)
+        input.value=sum
+    }
+</script>
 </html>
